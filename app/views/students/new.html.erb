@@ -1,31 +1,40 @@
-<div class="containter">
-    <div class="row center sign-up-form">
-        <div class="col s12">
-            <div class="card-panel">
-                <h3 class="header">Sign up</h3>
-                    <div class="row">
-                        <%= form_for(@student, html: {class: "col s12"}) do |f| %>
-                            <div class="row">
-                                <div class="input-field col-12">
-                                    <%= f.text_field :name, placeholder: "Enter your full name, please", autofocus: true %>
-                                    <%= f.label :name %>
+    <% if @student.errors.any? %>
+        <%= pluralize(@student.errors.count, "error") %>
+        prohibited your profile from being saved
+        <ul>
+            <% @student.errors.full_messages.each do |message| %>
+                <li><%= message %>
+            <% end %>
+        </ul>
+    <% end %>
+    <div class="containter">
+        <div class="row center sign-up-form">
+            <div class="col s12">
+                <div class="card-panel">
+                    <h3 class="header">Sign up</h3>
+                        <div class="row">
+                            <%= form_for(@student, html: {class: "col s12"}) do |f| %>
+                                <div class="row">
+                                    <div class="input-field col-12">
+                                        <%= f.text_field :name, placeholder: "Enter your full name, please", autofocus: true %>
+                                        <%= f.label :name %>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col-12">
-                                    <%= f.email_field :email, placeholder: "Enter your password" %>
-                                    <%= f.label :email %>
+                                <div class="row">
+                                    <div class="input-field col-12">
+                                        <%= f.email_field :email, placeholder: "Enter your password" %>
+                                        <%= f.label :email %>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col-12">
-                                    <%= f.submit "Submit", class: "btn orange waves-effect waves-light right" %>
+                                <div class="row">
+                                    <div class="input-field col-12">
+                                        <%= f.submit "Submit", class: "btn orange waves-effect waves-light right" %>
+                                    </div>
                                 </div>
-                            </div>
-                        <% end %>
+                            <% end %>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
