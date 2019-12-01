@@ -4,9 +4,20 @@
             <div class="card-content white-text">
                 <span class="card-title">Name: <%= @student.name %></span>
                 <p>Email: <%= @student.email %></p>
-                <p>Event Enrollments: None</p>
+                <p>Event Enrollments: 
+                    <% if @student.courses.empty? %>
+                        None
+                    <% else %>
+                        <ul>
+                            <% @student.courses.each do |course| %>
+                                <li><%= course.name %></li>
+                        </ul>
+                    <% end %>
+                    </p>
             </div>
         </div>
-        <%= link_to '<i class="material-icons right">edit</i>Edit Profile'.html_safe, edit_student_path(@student), class: "waves-effect waves-light btn" %>
+        <% if current_user == @student %>
+            <%= link_to '<i class="material-icons right">edit</i>Edit Profile'.html_safe, edit_student_path(@student), class: "waves-effect waves-light btn" %>
+        <% end %>
     </div>
 </div>
