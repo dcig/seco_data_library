@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Built this through part of an Udemy course. Since completed it's being re-worked into something functional complimenting the seco app in some capacity.
 
-Things you may want to cover:
 
-* Ruby version
+Notable mentions:
+* Started as "University Application" - Starting to be used as a resource for information, tips, challenges and other Diabetic related content
 
-* System dependencies
+* Ruby on Rails w/ Materialize CSS
 
-* Configuration
+* Built-in Authentication
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Work in progress. 
